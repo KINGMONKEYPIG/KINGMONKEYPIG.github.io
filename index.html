@@ -1,8 +1,27 @@
 <html>
 <body>
-<video width="100%" height="100%" autoplay loop>
+<video width="100%" height="100%" autoplay loop muted id="videoId">
 <source src="spill.mp4" type"video/mp4">
 </video>
+<script>
+function toggleMute() {
+
+  var video=document.getElementById("videoId");
+
+  if(video.muted){
+    video.muted = false;
+  } else {
+    debugger;
+    video.muted = true;
+    video.play()
+  }
+
+}
+
+$(document).ready(function(){
+  setTimeout(toggleMute,3000);
+})
+</script>
 </body>
 
 </html>
