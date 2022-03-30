@@ -1,26 +1,21 @@
 <html>
 <body>
-<video width="100%" height="100%" autoplay loop muted id="videoId">
-<source src="spill.mp4" type"video/mp4">
+
+<button onclick="play()" id="buttonId"  style="margin: auto;display:block;width:50%;height:50%;">
+press the button?
+</button>
+<div id="divId" style="display:none">
+<video width="100%" height="100%" loop id="videoId">
+<source src="spill.mp4" type="video/mp4">
 </video>
+</div>
 <script>
-function toggleMute() {
-
-  var video=document.getElementById("videoId");
-
-  if(video.muted){
-    video.muted = false;
-  } else {
-    debugger;
-    video.muted = true;
-    video.play()
-  }
+function play() {
+document.getElementById("divId").style.display="block";
+document.getElementById("videoId").play();
+document.getElementById("buttonId").style.display="none";
 
 }
-
-$(document).ready(function(){
-  setTimeout(toggleMute,3000);
-})
 </script>
 </body>
 
