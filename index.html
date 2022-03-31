@@ -17,8 +17,9 @@ press the button?
 <script>
 function play() {
 document.getElementById("divId").style.display="block";
-document.getElementById("videoId").play();
 document.getElementById("buttonId").style.display="none";
+document.getElementById("audioId").volume=0.5;
+document.getElementById("videoId").play();
 document.getElementById("audioId").play();
 
 
