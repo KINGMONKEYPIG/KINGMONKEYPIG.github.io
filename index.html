@@ -6,21 +6,24 @@ body {background: black;}
 <button onclick="play()" id="buttonId"  style="margin:auto;display:block;width:50%;height:50%;">
 press the button?
 </button>
+
 <div id="divId" style="display:none">
 <video width="100%" height="100%" loop  mute id="videoId">
-<source src="spill.mp4" type="video/mp4">
+<source id="vid" src="" type="video/mp4">
 </video>
 </div>
-<audio loop id="audioId">
-<source src="music.mp3" type="audio/mpeg">
-</audio>
+
 <script>
 function play() {
+var vidlist = ["spill.mp4", "fat.mp4", "damnarang.mp4", "hello.mp4"];
+var randvid = vidlist[Math.floor(Math.random() * vidlist.length)];
+
+video = document.querySelector('video');
+video.setAttribute("src",randvid);
 document.getElementById("divId").style.display="block";
 document.getElementById("buttonId").style.display="none";
-document.getElementById("audioId").volume=0.5;
 document.getElementById("videoId").play();
-document.getElementById("audioId").play();
+
 }
 </script>
 </body>
